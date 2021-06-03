@@ -16,7 +16,14 @@ export default function Weather (){
 
 
         function showWeatherInformation(response){
+
+            let iconUrl = `http://openweathermap.org/img/wn/${response.data.weather.[0].icon}@2x.png`
+            function setIcon (){
+                return (
+                    <img src={iconUrl} alt="weather icon"/>)
+            }
             let temperature = (response.data.main.temp);
+
 
             
         setWeatherInformation(
@@ -24,6 +31,7 @@ export default function Weather (){
             <h2>
                 {city}
             </h2>
+            {setIcon()}
             <p>{Math.round(temperature)}ºC</p>
             </div>
         )
