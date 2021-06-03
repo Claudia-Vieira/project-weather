@@ -19,12 +19,19 @@ export default function Weather (){
 
         function showWeatherInformation(response){
 
+            let description = (response.data.weather[0].description);
+
             let iconUrl = `http://openweathermap.org/img/wn/${response.data.weather.[0].icon}@2x.png`
             function setIcon (){
                 return (
-                    <img src={iconUrl} alt="weather icon"/>)
+                    <div>
+                    <img src={iconUrl} alt="weather icon"/>
+                    <figcaption>{description}</figcaption>
+                    </div>)
             }
             let temperature = (response.data.main.temp);
+            let wind = (response.data.wind.speed)*3.6;
+            let humidity=(response.data.main.humidity);
         
         setWeatherInformation(
 
@@ -35,8 +42,10 @@ export default function Weather (){
             </h2>
             {setIcon()}
             <p>{Math.round(temperature)}ºC</p>
+            <p>Wind: {Math.round(wind)} km/h</p>
+            <p>Humidity: {humidity}%</p>
+            
             <br/>
-            <p>Day</p>
             <hr/>
             <Forecast/>
             </div>

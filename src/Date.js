@@ -29,7 +29,6 @@ export default function setDate(){
         "Sat"
       ];
 
-
     return(
         <div>
         <p>{date[today.getDate()]},{today.getDay()}th {month[today.getMonth()]}</p>
