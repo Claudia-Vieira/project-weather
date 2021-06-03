@@ -65,6 +65,8 @@ export default function Weather (){
      </form>
 
      <h2>{weatherInformation}</h2>
+
+     <p> <a href="https://github.com/Claudia-Vieira/Weather-Project">Open Source</a> by Cláudia Vieira</p>
 </div>
     )
 }
