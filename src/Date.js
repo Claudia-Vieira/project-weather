@@ -19,7 +19,7 @@ export default function setDate(){
         "Dec"
       ];
       
-    let date = [
+    let day = [
         "Sun",
         "Mon",
         "Tue",
@@ -28,11 +28,28 @@ export default function setDate(){
         "Fri",
         "Sat"
       ];
+    let minutes = today.getMinutes()
+    if (minutes<10){
+      minutes=`0${minutes}`
+    }
+
+    let date = today.getDate();
+
+    let ordinalNumber = `th`
+    if (date===1){
+      ordinalNumber=`st`
+    } if (date===2){
+      ordinalNumber=`nd`
+    }
+    if (date===3){
+      ordinalNumber=`rd`
+    }
 
     return(
         <div>
-        <p>{date[today.getDate()]},{today.getDay()}th {month[today.getMonth()]}</p>
-        <p>{today.getHours()}:{today.getMinutes()}</p>
+        <p>{day[today.getDay()]},{date}{ordinalNumber} {month[today.getMonth()]}</p>
+        <p>{today.getHours()}:{minutes}</p>
+        {console.log(today.getDate())}
         </div>
     )
 }
