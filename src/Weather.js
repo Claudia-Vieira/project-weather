@@ -9,13 +9,15 @@ export default function Weather (){
 
     let [weatherInformation, setWeatherInformation] = useState(null);
 
-    function showCity(event){
+    let[ready,setReady] = useState(false);
+
+    function getCity(event){
         setCity(event.target.value);
     }
 
     function handleSubmit(event){
         event.preventDefault();
-
+        setReady(true);
 
         function showWeatherInformation(response){
 
@@ -32,7 +34,8 @@ export default function Weather (){
             let temperature = (response.data.main.temp);
             let wind = (response.data.wind.speed)*3.6;
             let humidity=(response.data.main.humidity);
-        
+
+            if(ready) { return(
         setWeatherInformation(
 
             <div>
@@ -49,18 +52,21 @@ export default function Weather (){
             <hr/>
             <Forecast/>
             </div>
-        )}
+        ))}
+        else{ 
 
         let apiKey = `011674ac65e3e0ef6d73be0d4fdbae64`
         let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
         axios.get(weatherUrl).then(showWeatherInformation);
-        }
+
+        return("Loading")
+        }}}
 
     return (
 <div>
     <h1> Weather App</h1>
      <form onSubmit={handleSubmit}>
-         <input type="text" placeholder="Enter a city..." onChange={showCity}/>
+         <input type="text" placeholder="Enter a city..." onChange={getCity}/>
          <input type="submit" value="Search"/>
      </form>
 

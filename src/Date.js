@@ -49,7 +49,6 @@ export default function setDate(){
         <div>
         <p>{day[today.getDay()]},{date}{ordinalNumber} {month[today.getMonth()]}</p>
         <p>{today.getHours()}:{minutes}</p>
-        {console.log(today.getDate())}
         </div>
     )
 }
