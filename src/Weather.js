@@ -35,7 +35,8 @@ export default function Weather (){
             let wind = (response.data.wind.speed)*3.6;
             let humidity=(response.data.main.humidity);
 
-            if(ready) { return(
+            if(ready) {
+                return(
         setWeatherInformation(
 
             <div>
@@ -52,8 +53,9 @@ export default function Weather (){
             <hr/>
             <Forecast/>
             </div>
-        ))}
-        else{ 
+        ))
+    }
+        else { 
 
         let apiKey = `011674ac65e3e0ef6d73be0d4fdbae64`
         let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
