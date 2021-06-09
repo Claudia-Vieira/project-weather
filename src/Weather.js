@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import Date from "./Date";
 import Forecast from "./Forecast";
+import Temperature from "./Temperature";
 export default function Weather() {
 
   let [city, setCity] = useState(null);
@@ -51,7 +52,7 @@ export default function Weather() {
           <img src={weatherInformation.iconUrl} alt="weather icon" />
           <figcaption>{weatherInformation.description}</figcaption>
         </div>
-        <p>{Math.round(weatherInformation.temperature)}ºC</p>
+        <Temperature celsius={Math.round(weatherInformation.temperature)} fahrenheit={Math.round((Math.round(weatherInformation.temperature)*9)/5+32)}/>
         <p>Wind: {Math.round(weatherInformation.wind)} km/h</p>
         <p>Humidity: {weatherInformation.humidity}%</p>
         <br />
