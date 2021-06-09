@@ -14,7 +14,10 @@ export default function Weather() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    search();
+    if ({city}===""){
+    search();}
+     else {
+         return(alert("Please, enter a city!"))}
     setReady(true);
   }
 
