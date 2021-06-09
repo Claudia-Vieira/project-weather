@@ -46,7 +46,7 @@ export default function setDate(){
     }
 
     return(
-        <div>
+        <div style={{ color: "grey" }}>
         <p>{day[today.getDay()]},{date}{ordinalNumber} {month[today.getMonth()]}</p>
         <p>{today.getHours()}:{minutes}</p>
         </div>

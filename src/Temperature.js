@@ -20,13 +20,13 @@ export default function Temperature (props){
 
 
      if (unit==="celsius"){ return(
-     <p>{celsius}ºC | <a href="/" onClick={converToFahrenheit}>F</a> </p>
+     <h3 style={{ fontSize:30 }}>{celsius}ºC | <a href="/" onClick={converToFahrenheit}>F</a> </h3>
  )}
 
  else {
      return(
 
-       <p> {fahrenheit}ºF | <a href="/" onClick={converToCelsius}>C</a></p>
+       <h3 style={{ fontSize:30 }}> {fahrenheit}ºF | <a href="/" onClick={converToCelsius}>C</a></h3>
      )
  }
 }

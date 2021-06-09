@@ -18,7 +18,6 @@ export default function Weather() {
     if (city===null){
     return(alert("Please, enter a city!"))} 
     else{search();
-    setReady(true);
   }}
 
   function search() {
@@ -35,7 +34,7 @@ export default function Weather() {
       humidity: response.data.main.humidity,
       iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
-    ;
+    setReady(true);   ;
   }
 
   if (ready) {
@@ -53,15 +52,14 @@ export default function Weather() {
           <figcaption>{weatherInformation.description}</figcaption>
         </div>
         <Temperature celsius={Math.round(weatherInformation.temperature)} fahrenheit={Math.round((Math.round(weatherInformation.temperature)*9)/5+32)}/>
-        <p>Wind: {Math.round(weatherInformation.wind)} km/h</p>
-        <p>Humidity: {weatherInformation.humidity}%</p>
+        <p><strong>Wind:</strong> {Math.round(weatherInformation.wind)} km/h</p>
+        <p><strong>Humidity:</strong> {weatherInformation.humidity}%</p>
         <br />
         <hr />
         <Forecast />
       </div>
     );
   } else {
-    search();
     return (
     <div>
         <h1>Weather App</h1>
