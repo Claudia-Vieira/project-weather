@@ -14,12 +14,11 @@ export default function Weather() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    if ({city}===""){
-    search();}
-     else {
-         return(alert("Please, enter a city!"))}
+    if (city===null){
+    return(alert("Please, enter a city!"))} 
+    else{search();
     setReady(true);
-  }
+  }}
 
   function search() {
     let apiKey = `011674ac65e3e0ef6d73be0d4fdbae64`;
