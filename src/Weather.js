@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Date from "./Date";
 import Forecast from "./Forecast";
 import Temperature from "./Temperature";
+import './Weather.css';
 export default function Weather() {
 
   let [city, setCity] = useState("");
@@ -43,8 +44,8 @@ export default function Weather() {
       <div>
           <h1>Weather App</h1>
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="Enter a city..." onChange={getCity} />
-          <input type="submit" value="Search" />
+          <input type="text" placeholder="Enter a city..." onChange={getCity} id="text"/>
+          <input type="submit" value="Search" id="search"/>
         </form>
         <Date />
         <h2>{weatherInformation.city}</h2>
@@ -65,8 +66,8 @@ export default function Weather() {
     <div>
         <h1>Weather App</h1>
     <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="Enter a city..." onChange={getCity} />
-          <input type="submit" value="Search" />
+          <input type="text" placeholder="Enter a city..." onChange={getCity} id="text"/>
+          <input type="submit" value="Search" id="search"/>
         </form>
         <p>Loading...</p>
         </div>);
