@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import './Forecast.css'
 
 export default function Forecast (props){
 
+    let [forecast, setForecast]=useState(null);
+
     function getForecastData(response){
-        console.log(response.data)
+        setForecast(response.data.daily);
     }
 
     let latitute=props.coordinates.lat
@@ -21,7 +23,7 @@ export default function Forecast (props){
         <div className="col">
             <div className="Forecast-day">Fri</div>
             <div className="Forecast-icon"><img src={props.iconUrl} alt="weather icon" /></div>
-            <div><span className="Forecast-temperature-max">19º</span><span className="Forecast-temperature-min">10º</span></div>
+            <div><span className="Forecast-temperature-max">19ºC</span><span className="Forecast-temperature-min">10º</span></div>
         </div>
         </div>
         </div>
