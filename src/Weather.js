@@ -45,7 +45,6 @@ export default function Weather() {
   if (ready) {
     return (
       <div>
-          <h1>Weather App</h1>
         <form onSubmit={handleSubmit}>
           <input type="text" placeholder="Enter a city..." onChange={getCity} id="text"/>
           <input type="submit" value="Search" id="search"/>
@@ -61,13 +60,12 @@ export default function Weather() {
         <p><strong>Humidity:</strong> {weatherInformation.humidity}%</p>
         <br />
         <hr />
-        <Forecast iconUrl={weatherInformation.iconUrl} coordinates={weatherInformation.coordinates} />
+        <Forecast coordinates={weatherInformation.coordinates} />
       </div>
     );
   } else {
     return (
     <div>
-        <h1>Weather App</h1>
     <form onSubmit={handleSubmit}>
           <input type="text" placeholder="Enter a city..." onChange={getCity} id="text"/>
           <input type="submit" value="Search" id="search"/>

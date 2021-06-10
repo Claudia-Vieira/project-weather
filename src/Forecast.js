@@ -16,8 +16,10 @@ export default function Forecast (props){
    
 if (loaded){
     return(
+        
         <div className="container">
         <div className="row">
+            
         <WeatherForecastDay data={forecast[1]}/>
         <WeatherForecastDay data={forecast[2]}/>
         <WeatherForecastDay data={forecast[3]}/>
@@ -25,6 +27,7 @@ if (loaded){
         <WeatherForecastDay data={forecast[5]}/>
         </div>
         </div>
+        
     );
 } else {
     let latitute=props.coordinates.lat;
