@@ -5,7 +5,7 @@ import Forecast from "./Forecast";
 import Temperature from "./Temperature";
 export default function Weather() {
 
-  let [city, setCity] = useState(null);
+  let [city, setCity] = useState("");
   let [weatherInformation, setWeatherInformation] = useState(null);
   let [ready, setReady] = useState(false);
 
@@ -15,7 +15,7 @@ export default function Weather() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (city===null){
+    if (city.length===0){
     return(alert("Please, enter a city!"))} 
     else{search();
   }}
@@ -28,6 +28,7 @@ export default function Weather() {
 
   function showWeatherInformation(response) {
     setWeatherInformation({
+      city: response.data.name,
       description: response.data.weather[0].description,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
@@ -46,10 +47,10 @@ export default function Weather() {
           <input type="submit" value="Search" />
         </form>
         <Date />
-        <h2>{city}</h2>
+        <h2>{weatherInformation.city}</h2>
         <div>
           <img src={weatherInformation.iconUrl} alt="weather icon" />
-          <figcaption>{weatherInformation.description}</figcaption>
+          <figcaption><i>{weatherInformation.description}</i></figcaption>
         </div>
         <Temperature celsius={Math.round(weatherInformation.temperature)} fahrenheit={Math.round((Math.round(weatherInformation.temperature)*9)/5+32)}/>
         <p><strong>Wind:</strong> {Math.round(weatherInformation.wind)} km/h</p>

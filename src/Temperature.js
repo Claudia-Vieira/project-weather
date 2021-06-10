@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './Temperature.css'
 
 export default function Temperature (props){
 
@@ -20,13 +21,13 @@ export default function Temperature (props){
 
 
      if (unit==="celsius"){ return(
-     <h3 style={{ fontSize:30 }}>{celsius}ºC | <a href="/" onClick={converToFahrenheit}>F</a> </h3>
+     <h3 id="temperature" >{celsius}ºC | <a href="/" onClick={converToFahrenheit} id="unit">F</a> </h3>
  )}
 
  else {
      return(
 
-       <h3 style={{ fontSize:30 }}> {fahrenheit}ºF | <a href="/" onClick={converToCelsius}>C</a></h3>
+       <h3 id="temperature"> {fahrenheit}ºF | <a href="/" onClick={converToCelsius} id="unit">C</a></h3>
      )
  }
 }
