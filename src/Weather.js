@@ -31,6 +31,7 @@ export default function Weather() {
 
   function showWeatherInformation(response) {
     setWeatherInformation({
+      coordinates: response.data.coord,
       city: response.data.name,
       description: response.data.weather[0].description,
       temperature: response.data.main.temp,
@@ -60,7 +61,7 @@ export default function Weather() {
         <p><strong>Humidity:</strong> {weatherInformation.humidity}%</p>
         <br />
         <hr />
-        <Forecast iconUrl={weatherInformation.iconUrl} />
+        <Forecast iconUrl={weatherInformation.iconUrl} coordinates={weatherInformation.coordinates} />
       </div>
     );
   } else {
