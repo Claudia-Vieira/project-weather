@@ -11,3 +11,7 @@
 .Forecast-temperature-max{
     font-weight:500;
 }
+
+.Forecast-icon img{
+    height: 70px;
+}

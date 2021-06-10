@@ -60,7 +60,7 @@ export default function Weather() {
         <p><strong>Humidity:</strong> {weatherInformation.humidity}%</p>
         <br />
         <hr />
-        <Forecast />
+        <Forecast iconUrl={weatherInformation.iconUrl} />
       </div>
     );
   } else {
