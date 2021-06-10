@@ -1,0 +1,13 @@
+.Forecast-day{
+    color:darkblue;
+    font-weight: bold;
+}
+
+.Forecast-temperature-min{
+    margin-left: 5px;
+    color: grey;
+}
+
+.Forecast-temperature-max{
+    font-weight:500;
+}

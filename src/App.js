@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App">
      <Weather/>
+     <br/>
      <p> <a href="https://github.com/Claudia-Vieira/project-weather">Open Source</a> by Cláudia Vieira</p>
     </div>
   );
