@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
+import Loader from "react-loader-spinner";
+
 import Date from "./Date";
 import Forecast from "./Forecast";
 import Temperature from "./Temperature";
@@ -48,7 +50,7 @@ export default function Weather() {
           <input type="submit" value="Search" id="search"/>
         </form>
         <Date />
-        <h2>{weatherInformation.city}</h2>
+        <h2 id="city">{weatherInformation.city}</h2>
         <div>
           <img src={weatherInformation.iconUrl} alt="weather icon" />
           <figcaption><i>{weatherInformation.description}</i></figcaption>
@@ -69,7 +71,7 @@ export default function Weather() {
           <input type="text" placeholder="Enter a city..." onChange={getCity} id="text"/>
           <input type="submit" value="Search" id="search"/>
         </form>
-        <p>Loading...</p>
+        <Loader type="Rings" color="#00BFFF" height={80} width={80} />
         </div>);
   }
 }

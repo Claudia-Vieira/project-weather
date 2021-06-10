@@ -47,8 +47,8 @@ export default function setDate(){
 
     return(
         <div style={{ color: "grey" }}>
-        <p>{day[today.getDay()]},{date}{ordinalNumber} {month[today.getMonth()]}</p>
-        <p>{today.getHours()}:{minutes}</p>
+        <p style={{marginBottom:2, fontSize:13}}>{day[today.getDay()]},{date}{ordinalNumber} {month[today.getMonth()]}</p>
+        <p style={{marginTop:1, fontSize:13}}>{today.getHours()}:{minutes}</p>
         </div>
     )
 }

@@ -14,3 +14,7 @@ input[type=text]:focus {
     background-color: #d0efff;
     color:#03254c;
 }
+
+#city{
+    color:darkblue;
+    text-shadow: 1px 1px 1px yellow;}
