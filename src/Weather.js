@@ -53,13 +53,12 @@ export default function Weather() {
         <h2 id="city">{weatherInformation.city}</h2>
         <div>
           <img src={weatherInformation.iconUrl} alt="weather icon" />
-          <figcaption><i>{weatherInformation.description}</i></figcaption>
+          <figcaption class="description"><i>{weatherInformation.description}</i></figcaption>
         </div>
         <Temperature celsius={Math.round(weatherInformation.temperature)} fahrenheit={Math.round((Math.round(weatherInformation.temperature)*9)/5+32)}/>
         <p><strong>Wind:</strong> {Math.round(weatherInformation.wind)} km/h</p>
         <p><strong>Humidity:</strong> {weatherInformation.humidity}%</p>
-        <br />
-        <hr />
+        <hr className="line"/>
         <Forecast coordinates={weatherInformation.coordinates} />
       </div>
     );

@@ -18,3 +18,13 @@ input[type=text]:focus {
 #city{
     color:darkblue;
     text-shadow: 1px 1px 1px yellow;}
+
+.line{
+    border-top: 1px solid #03254c;
+    width:90%;
+    margin-top: 0;
+}
+.description{
+    text-transform: capitalize;
+    margin-bottom:5px;
+}

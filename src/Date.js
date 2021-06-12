@@ -5,28 +5,28 @@ export default function setDate(){
     let today=new Date();
 
     let month = [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
+        "January",
+        "February",
+        "March",
+        "April",
         "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec"
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
       ];
       
     let day = [
-        "Sun",
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat"
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
       ];
     let minutes = today.getMinutes()
     if (minutes<10){
@@ -46,7 +46,7 @@ export default function setDate(){
     }
 
     return(
-        <div style={{ color: "grey" }}>
+        <div style={{ color: "grey", marginTop:5 }}>
         <p style={{marginBottom:2, fontSize:13}}>{day[today.getDay()]},{date}{ordinalNumber} {month[today.getMonth()]}</p>
         <p style={{marginTop:1, fontSize:13}}>{today.getHours()}:{minutes}</p>
         </div>
